@@ -99,7 +99,7 @@ no improving switch remains.
 
 ## Running against Oink
 
-The solvers are designed to be validated against Oink's built-in solvers. From the
+The solvers are designed to be validated against Oink's built-in solvers. Assuming /oink and /part2 live in a shared folder, from the
 Oink `build/` directory, register a script as an external solver with `%I` / `%O`
 standing for the input and output files:
 

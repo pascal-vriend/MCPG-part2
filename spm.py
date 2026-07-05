@@ -9,7 +9,7 @@ class SPMSolver:
 
     def _run_spm(self, shift=0):
         """
-        Runs the Small Progress Measures (SPM) algorithm.
+        Runs the Small Progress Measures algorithm.
         shift=0: Solves for Player 0 (Even) minimizing the measure.
         shift=1: Solves for Player 1 (Odd). By adding 1 to all priorities,
                  we invert the parity of the graph, allowing us to use the
@@ -25,7 +25,7 @@ class SPMSolver:
             if p % 2 == 1:
                 limits[p] += 1
 
-        # Measure array (None represents Top / +infinity)
+        # Measure array (None represents Top)
         measure = {n: [0] * k for n in self.nodes}
 
         def is_top(m):
@@ -132,7 +132,7 @@ class SPMSolver:
         # 1. Run standard SPM to get Even's winning set and strategies
         W0, strat0 = self._run_spm(shift=0)
 
-        # 2. Run dual SPM to effortlessly extract Odd's winning set and strategies
+        # 2. Run dual SPM to extract Odd's winning set and strategies
         W1, strat1 = self._run_spm(shift=1)
 
         winner = {}
